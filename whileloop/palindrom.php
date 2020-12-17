@@ -1,15 +1,17 @@
 <?php
 
-$a = 125;
+$a = 121;
 $sum=0;
 $num = $a;
-while($num > 1 )
+while($num > 0 )
 {
 
 $return = $num%10;
+//echo $return;
 $sum = (10*$sum)+$return;
-$num= $num/10;
-
+//echo $sum;
+$num= intval($num/10);
+//echo $num;
   
 }
 

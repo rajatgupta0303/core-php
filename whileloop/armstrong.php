@@ -5,11 +5,14 @@
 $sum = 0;
 $a = 123;
 $num = $a;
-while($num!= 0)
+while($num> 0)
 {
-	$return = $num%10;                            //123-3     12- 2     1-1
-	$sum = $sum + ($return*$return*$return);     //27            20+8      27+8+1
-	$num = $num/10;      						   //12             1
+	$return = $num%10;                            //3         2
+	//echo $return;
+	$sum = $sum + ($return*$return*$return);     //27            27+125=152      27+8+1
+	//echo $sum;
+	$num = intval($num/10);      				 //12             1
+	//echo $num;
 }            
 
 	if($a == $sum)

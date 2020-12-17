@@ -1,14 +1,14 @@
 <?php
 
-$a = 123;
+$a = 4567;
 $sum=0;
 
-while($a >1 )
+while($a > 0 )
 {
 
 $return = $a%10;
 $sum = (10*$sum)+$return;
-$a= $a/10;
+$a= intval($a/10);
 
   
 }
