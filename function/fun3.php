@@ -10,5 +10,5 @@ function nsum($num)
 	echo $sum;
 }
 
-nsum(2);
+nsum(5);
 ?>

@@ -12,5 +12,5 @@ function divi($a)
 	}
 }
 
-divi(251);
+divi(25);
 ?>

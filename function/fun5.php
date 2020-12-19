@@ -2,16 +2,16 @@
 
 function nsum($strt,$end,$div)
 {
-	$count =0;
+	$box =0;
 	for($strt;$strt<=$end; $strt++)
 	{
 		if($strt%$div==0)
 		{
-			$count++;
+			$box = $box+1;
 		}
 	}
-	echo $count;
+	echo $box;
 }
 
-nsum(5,30,3);
+nsum(5,15,3);
 ?>
