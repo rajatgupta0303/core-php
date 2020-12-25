@@ -4,30 +4,23 @@ function palin($n)
 {
 	$sum=0;
 	
-	$num = $n;
-	while($num > 0)
+	while($n > 0)
 	{
-		$rev = $num%10;
+		$rev = $n%10;
 		
-		$sum = ($sum*10) + $rev;
+		$sum = $sum + ($rev*$rev*$rev);
 		
-		$num = intval($num/10);
+		$n = intval($n/10);
 		
 	}
 
-if($sum == $n)
-{
-	echo "number is armstrong";
-}
-else
-{
-	echo "comman number";
-}
+echo "$sum";
+
 
 }
 
 
 
-palin(1451);
+palin(45);
 
 ?>
