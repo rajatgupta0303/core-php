@@ -1,0 +1,74 @@
+<!--  form 
+
+ 1. Textbox  ( single line comment)
+ 2. Textarea (multi line comment)
+ 3. Button -
+ 			button
+ 			radio
+ 			reset
+ 			submit
+ 4. Dropdornlist
+ 5. Checkbox
+ 6. File Field
+
+  -->
+
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+  	<title>Form example</title>
+  </head>
+  <body>
+  	<form>
+      <!-- form tag ke bina submit and reset button kaam nhi karta hai 
+
+      jab hm submit or resert button per click karte hai to vo form tag ko find karta hai usi ke accorfing kaam karta hai. 
+      -->
+  	FullName : <input type="text" id="fullname" name="fullname">
+  	<br/><br/>
+  	
+
+  	Address : <textarea cols="25" rows="5" id="addr" name="addr"></textarea>
+    <br/><br/>
+
+    Gender : <input type="radio" id="gen" name="gen" value="male">Male
+    <input type="radio" id="gen" name="gen" value="female">Female
+
+    <br/><br/>
+    City : 
+    <select id="city" name="city">
+      <option value="">Select</option>
+      <option value="a">Kanpur</option>
+      <option value="b">Agra</option>
+      <option value="c">Kannaul</option>
+      <option value="d">Lucknow</option>
+      <option value="e">Goa</option>
+    </select>
+
+    <br/><br/>
+
+    Education :
+    <input type="Checkbox" id="chk1" name="chk1" value="m">Matric
+    <input type="Checkbox" id="chk2" name="chk2" value="i">Intermideate
+    <input type="Checkbox" id="chk3" name="chk3" value="g">Graguted
+    <input type="Checkbox" id="chk4" name="chk4" value="pg">Post G
+
+    <br/><br/> 
+
+    File Upload : <input type="file" id="file" name="file" >
+
+    <br/><br/> 
+
+
+    <input type="button" id="btn" name="btn" value="Button">
+    <input type="submit" id="submit" name="submit" value="Submit">
+    <input type="reset" id="reset" name="reset" value="Reset">
+    
+
+  </form>
+
+<!-- Address : <textarea cols="25" rows="5"></textarea> -->
+
+  </body>
+  </html>
