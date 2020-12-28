@@ -1,4 +1,69 @@
 <?php
+
+//print_r($_POST);
+if(isset($_POST['submit']))
+{
+	$num1 = $_POST["num1"];
+	$num2 = $_POST["num2"];
+	$submit = $_POST["submit"];
+
+ 	if($submit == "Add")
+	{
+		$ans = $num1+$num2; 
+	}
+	else if($submit == "Sub")
+	{
+		$ans = $num1-$num2; 
+	}
+	else if($submit == 'Mul')
+	{
+		$ans = $num1*$num2; 
+	}
+	else if($submit == 'Div')
+	{
+		$ans = $num1/$num2; 
+	}
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculater</title>
+</head>
+<body>
+	<form method="POST">
+		<h3>Simple Calculater</h3>
+		<table border="1" cellpadding="10px" cellspacing="0px">
+			<tr>
+				<td>Enter Number 1 :</td>
+				<td colspan="3"><input type="number" id="num1" name="num1"></td>
+			</tr>
+			<tr>
+				<td>Enter Number 2 :</td>
+				<td colspan="3"><input type="number" id="num2" name="num2"></td>
+			</tr>
+			
+			<tr>
+				<td >
+					<input type="submit" name="submit" id="" value="Add">
+					<input type="submit" name="submit" id="" value="Sub">
+					<input type="submit" name="submit" id="" value="Mul">
+					<input type="submit" name="submit" id="" value="Div">
+				</td>				
+			</tr>
+		</table>
+	</form>
+	<br/>
+     <table>
+     	<tr>
+     		<td><b>Your Answer is :</b>  </td>
+     		<td><b><?php if(isset($_POST['submit'])) echo $ans ?></b></td>
+			
+     	</tr>
+     </table>
+</body>
+</html>
+<!-- <?php
 if(isset($_POST['add']))
 {
 
@@ -80,4 +145,4 @@ else
      	</tr>
      </table>
 </body>
-</html>
+</html> -->

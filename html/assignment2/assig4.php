@@ -1,14 +1,13 @@
 
 <?php
-
+//print_r($_POST);
 if(isset($_POST['submit']))
 {
 	$name = $_POST['name'];
 	$hobby = $_POST['hobby'];
-	$hobby1 = $_POST['hobby1'];
-	$hobby2 = $_POST['hobby2'];
-	$hobby3 = $_POST['hobby3'];
 	$aboutme = $_POST['aboutme'];
+	$hobby1 = implode(', ', $hobby);
+	//print_r($hobby);
 }
 
 
@@ -30,11 +29,11 @@ if(isset($_POST['submit']))
 			<tr>
 				<td>Hobby :</td>
 				<td>
-					<input type="checkbox" id="hobby" name="hobby" value="Dancing">Dancing
-					<input type="checkbox" id="hobby1" name="hobby1" value="Reading">Reading
+					<input type="checkbox" id="hobby" name="hobby[]" value="Dancing">Dancing
+					<input type="checkbox" id="hobby1" name="hobby[]" value="Reading">Reading
 				 <br/>
-					<input type="checkbox" id="hobby2" name="hobby2" value="Singing">Singing
-					<input type="checkbox" id="hobby3" name="hobby3" value="Teaching">Teaching
+					<input type="checkbox" id="hobby2" name="hobby[]" value="Singing">Singing
+					<input type="checkbox" id="hobby3" name="hobby[]" value="Teaching">Teaching
 				</td>
 			</tr>
 			<tr>
@@ -56,7 +55,7 @@ if(isset($_POST['submit']))
 		</tr>
 		<tr>
 			<td><b>Hobby : </b></td>
-			<td><?php if(isset($_POST['submit'])) echo ($hobby."  ".$hobby1."  ".$hobby2."  ".$hobby3); ?></td>
+			<td><?php if(isset($_POST['submit'])) echo $hobby1; ?></td>
 		</tr>
 		<tr>
 			<td><b>About Me : </b></td>
