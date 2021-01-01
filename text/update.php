@@ -276,7 +276,8 @@ if(isset($_POST['submit']))
 				 <input type="text" class="form-control" id="hobbytwo" name="hobbytwo" value="<?php echo $row->hobbytwo ?>" placeholder="Your Hobbies">
 				</div>
 			  </div>
-			  <button type="submit" class="btn btn-primary" name="submit" id="submit">Add Data</button>
+			  <button type="submit" class="btn btn-primary" name="submit" id="submit">ADD</button>
+			  
 		  </form>
 
 	</div>

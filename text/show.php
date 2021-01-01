@@ -10,6 +10,21 @@ if($errno!=0)
 	exit;
 }
 
+session_start();
+$a_id = $_SESSION['id'];
+
+$utype = $_SESSION['type'];
+//echo $a_id;
+//echo $utype;
+
+if($utype == 'admin' || $utype == 'user')
+	{
+	}
+else
+	{
+		header('Location:login.php');
+	}
+
 $id = $_GET['showid'];
 $exe = $obj->query("select * from user where id= $id ");
 

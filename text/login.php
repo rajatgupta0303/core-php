@@ -68,11 +68,11 @@ if (isset($_POST['submit']))
 </head>
 
 <body>
-	<div class="container my-5" align="center">
+	<div class="container my-5" style="width: 50%" margin:"auto">
 		<h4 class="bg-light p-2 mb-4">Login Form</h4>
 		<form method="post">
 			<div class="row">
-			  <div class="col-6">
+			  <div class="col-12">
 			  	<select class="form-control" id="type" name="type">
 					    <option value="admin">Admin</option>
 						<option value="user">User</option>
@@ -83,23 +83,23 @@ if (isset($_POST['submit']))
 				<br/>
 			<div class="row">
 			  
-			  <div class="col-6">
+			  <div class="col-12">
 				<input type="email" class="form-control" id="email" name="email" placeholder="Email">
 			  </div>
 			</div>
 			
 			<div class="row">
-				<div class="col-6">
+				<div class="col-12">
 				  <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-6">
+				<div class="col-12">
 			  		<button type="submit" id="submit" name="submit" class="btn btn-primary">Login</button>
 			  </div>
 			</div><br>
 			<div class="row">
-				<div class="col-6">
+				<div class="col-12">
 				  <a href="register.php">New Registration</a>
 				</div>
 			</div>

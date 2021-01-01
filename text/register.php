@@ -1,3 +1,5 @@
+
+  
 <?php
 
 $obj = new mysqli("localhost","root","","pupro");
@@ -15,17 +17,19 @@ if(isset($_POST['submit']))
 
 	$name = $_POST['fname'];
 	$email = $_POST['email'];
-	$contact = $_POST['contact'];
+	$rollno = $_POST['rollno'];
+	$speci = $_POST['speci'];
+	$contact = $_POST['contact']; 
+	$gender = $_POST['gen'];
 	$pass = $_POST['pass'];
-	
-	$exe = $obj -> query("INSERT INTO `user`(`type`,`name`, `email`, `contact`,`pass`) VALUES ('user','$name','$email','$contact','$pass')");
+										
+	$exe = $obj -> query("INSERT INTO `user`(`type`,`name`, `email`, `rollnum`, `specip`, `contact`, `gender`,`pass`) VALUES ('user','$name','$email','$rollno','$speci','$contact','$gender','$pass')");
 	
 
 	//echo $exe;
 	if($exe)
 	{
-		
-		echo "";
+		header('Location:login.php');
 	}
 	else
 	{
@@ -51,39 +55,59 @@ if(isset($_POST['submit']))
 </head>
 
 <body>
-	<div class="container my-5" align="center">
+	<div class="container my-5" style="width: 50%" margin:"auto">
 		<h4 class="bg-light p-2 mb-4">New Registration Form</h4>
 		<form method="post">
 			<div class="row">
-			  <div class="col-6">
+			  <div class="col-12">
 				<input type="text" class="form-control"  id="fname" name="fname" placeholder="Full Name">
 			  </div>
-			  
 			</div>
+
 			<div class="row">
-			  
-			  <div class="col-6">
+			  <div class="col-12">
 				<input type="email" class="form-control" id="email" name="email" placeholder="Email">
 			  </div>
 			</div>
+
 			<div class="row">
-			  
-			  <div class="col-6">
+			  <div class="col-12">
 				<input type="text" class="form-control" id="contact" name="contact" placeholder="Contact">
 			  </div>
 			</div>
+
 			<div class="row">
-				<div class="col-6">
+			  <div class="col-12">
+				<input type="text" class="form-control" id="rollno" name="rollno" placeholder="Roll Number">
+			  </div>
+			</div>
+
+			<div class="row">
+			  <div class="col-12">
+				<input type="text" class="form-control" id="speci" name="speci" placeholder="Spesilization">
+			  </div>
+			</div>
+
+			<div class="row">
+			  <div class="col-12">
+				<input type="text" class="form-control" id="gen" name="gen" placeholder="Gender">
+			  </div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
 				  <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
 				</div>
 			</div>
+
 			<div class="row">
-				<div class="col-6">
+				<div class="col-12">
 			  <button type="submit" id="submit" name="submit" class="btn btn-primary">Submit</button>
 			  </div>
-			</div><br>
+			</div>
+			<br>
 			<div class="row">
-				<div class="col-6">
+				<div class="col-12">
 				  <a href="login.php">Login</a>
 				</div>
 			</div>
