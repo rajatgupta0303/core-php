@@ -60,16 +60,69 @@ $result = $obj->query("select * from user where type='user' ");
 		<h5>User Information</h5>
 		<table class="table">
 		<tbody>
-			<div class="row">
+			<form method = "post">
+  				<div class="row">
+			  		<div class="col-4">
+						<tr>
+							<td><input name="search" type="text" size="30" placeholder="name"/></td>
+                            <td><input type="submit" value="Search"/></td>
+                        </tr>
+                        </div>
+			</div>
+          </form> 
+          
+          <div class="row">
 			  <div class="col-3">
+			  	
 			  	<tr>
-			  		<th>ID</th>
 					<th>NAME</th>
 					<th>EMAIL</th>
 					<th>CONTACT</th>
 				</tr>
 			</div>
 		</div>
+
+<?php
+
+ //output = '';
+
+  if(isset($_POST['search'])) {
+    $search = $_POST['search'];
+    $search = preg_replace("#[^0-9a-z]i#","", $search);
+
+    $result = $obj->query("SELECT * FROM user WHERE name LIKE '%$search%'") or die ("Could not search");
+    $count = mysqli_num_rows($result);
+    
+    if($count == 0){
+      $output = "There was no search results!";
+
+    }else{
+
+      while ($row1 = mysqli_fetch_array($result)) {
+ 
+      	$id = $row1['id'];
+        $name = $row1 ['name'];
+        $email = $row1 ['email'];
+        $contact = $row1 ['contact'];
+
+       // $output ='<div> '.$id.''.$name.''.$email.''.$contact.'</div>';
+
+      }?>
+      	<div class="row">
+			  <div class="col-4">
+				<tr>
+					<td><?php echo $name; ?></td>
+					<td><?php echo $email; ?></td>
+					<td><?php echo $contact; ?></td>
+			
+		</tr>
+			</div>
+		</div>
+		<?php
+    }
+  }
+
+  ?>
 
 			<?php
 				while($row = $result->fetch_object())
@@ -78,7 +131,6 @@ $result = $obj->query("select * from user where type='user' ");
 		<div class="row">
 			  <div class="col-3">
 				<tr>
-					<td><?php echo $row->id; ?></td>
 					<td><a href="show.php?showid= <?php echo $row->id; ?>"><?php echo $row->name; ?></a></td>
 					<td><?php echo $row->email; ?></td>
 					<td><?php echo $row->contact; ?></td>
