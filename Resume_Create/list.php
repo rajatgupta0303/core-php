@@ -62,10 +62,10 @@ $result = $obj->query("select * from user where type='user' ");
 		<tbody>
 			<form method = "post">
   				<div class="row">
-			  		<div class="col-4">
+			  		<div class="col-12">
 						<tr>
-							<td><input name="search" type="text" size="30" placeholder="name"/></td>
-                            <td><input type="submit" value="Search"/></td>
+							<td><input name="search" type="text" size="30" placeholder="name"/>
+                            <input type="submit" value="Search"/></td>
                         </tr>
                         </div>
 			</div>
