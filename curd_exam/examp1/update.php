@@ -15,8 +15,10 @@ $row= $result->fetch_object();
  $h=$row->hobby;
  $h1 = explode(' , ', $h);
 
- echo "<pre>";
- print_r($h1);
+ 
+
+ //echo "<pre>";
+ //print_r($h1);
 
  //echo "<pre>";
  //print_r($row);

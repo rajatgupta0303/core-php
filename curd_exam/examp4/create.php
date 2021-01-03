@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
 
 	if($exe )
 	{
-		echo "y";
+		header('location:show.php');
 	}
 	else{
 		echo "sorry";
@@ -59,10 +59,10 @@ if(isset($_POST['submit']))
 			<tr><td>City</td>
 				<td><select name="city" id="city">
 					<option>Select City </option>
-					<option value=" Lucknow">Lucknow</option>
-					<option value=" Delhi">Delhi</option>
-					<option value=" Kanpur">Kanpur</option>
-					<option value=" Noida">Noida</option>
+					<option value="Lucknow">Lucknow</option>
+					<option value="Delhi">Delhi</option>
+					<option value="Kanpur">Kanpur</option>
+					<option value="Noida">Noida</option>
 				</select></td></tr>
 			
 
@@ -70,8 +70,8 @@ if(isset($_POST['submit']))
 
 			<tr>
 			<td>Gender</td>
-			<td><input type="radio" name="gender" id="gender" value="male"></input>Male
-				<input type="radio" name="gender" id="gender" value="female"></input>Femaale
+			<td><input type="radio" name="gender" id="gender" value="Male"></input>Male
+				<input type="radio" name="gender" id="gender" value="Female"></input>Femaale
 			</td>
 		</tr>
 

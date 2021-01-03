@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
 
 	if($exe)
 	{
-			echo "tes";
+			echo "";
 	}
 	else{
 		echo "ni";

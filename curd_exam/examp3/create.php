@@ -24,7 +24,7 @@ if(isset($_POST['submit']))
 
 	if($exe )
 	{
-		echo "";
+		header('location:show.php');
 	}
 	else{
 		echo "sorry";

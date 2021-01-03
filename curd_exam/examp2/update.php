@@ -7,13 +7,13 @@ $result = $obj->query("select * from orders where id= $id");
 $row = $result->fetch_object();
 $s = $row->stock;
 $c = $row->company;
-$ps = $row->psize;
-$ps1 = explode(',' , $ps );
+$p = $row->psize;
+$p1 = explode(', ' , $p );
 
 //echo $s;
 //echo $c;
 echo "<pre>";
-print_r($ps1);
+print_r($p1);
 
 if(isset($_POST['submit']))
 {
@@ -25,11 +25,11 @@ if(isset($_POST['submit']))
 
 	$ps = implode(', ', $Psize);
 
-	$exe = $obj->query("insert into orders(pname,discription,stock,company,psize)values('$Pname','$Desc','$Stock','$Company','$ps');");
+	$exe = $obj->query("update orders set pname='$Pname',discription='$Desc', stock='$Stock', company='$Company', psize='$ps' where id = $id ");
 
 	if($exe)
 	{
-			echo "tes";
+			header('location:show.php');
 	}
 	else{
 		echo "ni";
@@ -70,16 +70,19 @@ if(isset($_POST['submit']))
 			</select></td>
 		</tr>
 		<tr>
-			<td>Size</td>                                                 <?php if(in_array("play", $h1)) {echo 'checked ';}?>>Playing
-			<td><input type="checkbox" name="ch[]" id="chk1" value="300ml" <?php if(in_array("300ml", $ps1)) echo "checked"; ?> >300ml
-				<input type="checkbox" name="ch[]" id="chk2" value="500ml" <?php if(in_array("500ml", $ps1)) echo "checked"; ?> >500ml
-				<input type="checkbox" name="ch[]" id="chk3" value="1L" <?php if(in_array("1L", $ps1)) echo "checked"; ?> >1L
-				<input type="checkbox" name="ch[]" id="chk4" value="2L" <?php if(in_array("2L", $ps1)) echo "checked"; ?> >2L
-			</td>
-		</tr>                   
+			<td>Size</td>
+			<td><input type="checkbox" id="chk1" name="ch[]" value="300ml" 
+				<?php if(in_array("300ml", $p1 )) {echo 'checked ';}?>>300ml
+				<input type="checkbox" id="chk2" name="ch[]" value="500ml" 
+				<?php if(in_array("500ml", $p1 )) {echo 'checked ';} ?>>500ml
+				<input type="checkbox" id="chk3" name="ch[]" value="1L" 
+				<?php if(in_array("1L", $p1 )) {echo 'checked ';}?> >1L
+				<input type="checkbox" id="chk4" name="ch[]" value="2L" 
+				<?php if(in_array("2L", $p1 )) {echo 'checked ';}?> >2L
+			</td>              
 		<tr>
 			
-			<td colspan="2" align="center"><input type="submit" name="submit" id="submit" value="Submit"></td>
+			<td colspan="2" align="center"><input type="submit" name="submit" id="submit" value="Update"></td>
 		</tr>
 	</table>
 </form>
