@@ -74,10 +74,10 @@ if(isset($_POST['submit']))
 		<tr>
 			<td>Hobbies</td>
 				<td>
-				<input type="checkbox" id="chk1" name="chk[]" value="play">Playing</input>
-				<input type="checkbox" id="chk2" name="chk[]" value="swwim">Swwiming</input>
-				<input type="checkbox" id="chk3" name="chk[]" value="read">Reading</input>
-				<input type="checkbox" id="chk4" name="chk[]" value="chess">Chess</input>
+				<input type="checkbox" id="chk1" name="chk[]" value="play">Playing
+				<input type="checkbox" id="chk2" name="chk[]" value="swwim">Swwiming
+				<input type="checkbox" id="chk3" name="chk[]" value="read">Reading
+				<input type="checkbox" id="chk4" name="chk[]" value="chess">Chess
 			</td>
 		</tr>
 		<tr>
